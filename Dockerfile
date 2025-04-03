@@ -1,5 +1,5 @@
 # 阶段1：基础镜像准备
-FROM node:18-alpine AS base
+FROM node:22-alpine AS base
 
 # 设置工作目录
 WORKDIR /app
@@ -40,7 +40,7 @@ RUN yarn install --production --ignore-scripts --prefer-offline
 RUN yarn cache clean --all
 
 # 阶段3：构建最终的生产镜像
-FROM node:18-alpine
+FROM node:22-alpine
 
 # 设置工作目录
 WORKDIR /app
